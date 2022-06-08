@@ -1,0 +1,113 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.header-content {
+  display: grid;
+
+  grid-template-areas: "ttl img" "dsc img" "act img" "nts img";
+  @include xl-min {
+    padding-top: 200px;
+    padding-bottom: 160px;
+
+    grid-template-columns: 580px 1fr;
+  }
+  @include xl-sm {
+    padding-top: 180px;
+    padding-bottom: 60px;
+  }
+  @include xl-lg {
+    grid-template-columns: 50% 1fr;
+  }
+  @include lg {
+    grid-template-areas: "ttl" "dsc" "img" "act" "nts";
+    grid-template-columns: 1fr;
+  }
+  @include sm {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  row-gap: $gap;
+
+  &__title {
+    margin: 0;
+
+    font-weight: 600;
+    line-height: 1.08;
+
+    grid-area: ttl;
+    @include xl-min {
+      font-size: 65px;
+    }
+    @include xl-lg {
+      font-size: 50px;
+    }
+    @include lg {
+      text-align: center;
+
+      font-size: 40px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 20px;
+
+    line-height: 1.4;
+
+    grid-area: dsc;
+    @include xl-min {
+      font-size: 25px;
+    }
+    @include xl {
+      font-size: 20px;
+    }
+    @include lg-min {
+      padding-right: 70px;
+    }
+    @include lg {
+      text-align: center;
+    }
+  }
+
+  &__actions {
+    display: flex;
+
+    column-gap: $gap-sm;
+    grid-area: act;
+    @include lg {
+      justify-content: center;
+    }
+  }
+
+  &__picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    grid-area: img;
+  }
+
+  &__image {
+    @include lg-min {
+      width: 100%;
+    }
+    @include lg {
+      width: 50%;
+    }
+  }
+
+  &__btn {
+    @include sm-min {
+      min-width: 160px;
+    }
+    @include sm {
+      min-width: 120px;
+    }
+  }
+
+  &__notes {
+    grid-area: nts;
+    @include lg {
+      text-align: center;
+    }
+  }
+}

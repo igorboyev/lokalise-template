@@ -1,0 +1,18 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.header {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  min-height: 100vh;
+
+  background-color: $color-white;
+
+  @include sm {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
