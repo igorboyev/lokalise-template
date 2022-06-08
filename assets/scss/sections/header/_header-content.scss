@@ -30,22 +30,7 @@
 
   &__title {
     margin: 0;
-
-    font-weight: 600;
-    line-height: 1.08;
-
     grid-area: ttl;
-    @include xl-min {
-      font-size: 65px;
-    }
-    @include xl-lg {
-      font-size: 50px;
-    }
-    @include lg {
-      text-align: center;
-
-      font-size: 40px;
-    }
   }
 
   &__description {
